@@ -13,6 +13,8 @@ jobs:
       - uses: iterative/setup-cml@v1
       - uses: actions/checkout@v2
       - name: test
+        env:
+          SUPERSEC: ${{ secrets.SUPERSECRET }}
         run: |
           cml-runner \
             --log \
