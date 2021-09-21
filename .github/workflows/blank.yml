@@ -1,6 +1,12 @@
 name: err
 on: workflow_dispatch
 jobs:
+  other-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: do stuff
+        run: sleep 5
   err:
     runs-on: ubuntu-latest
     steps:
