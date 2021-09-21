@@ -11,7 +11,7 @@ jobs:
             --log \
             --single \
             --idle-timeout=1800 \
-            --token=${{ secret.SUPERSECRET }} \
+            --token=${{ secrets.SUPERSECRET }} \
             --cloud=gcp \
             --cloud-region=us-west \
             --cloud-type=m \
