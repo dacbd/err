@@ -31,5 +31,7 @@ jobs:
             --test-error-arg
             
       - run: cml-runner --bad-arg 1> /dev/null
+        if: always()
       - run: cml-runner --bad-arg 2> /dev/null
+        if: always()
 
