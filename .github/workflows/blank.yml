@@ -19,7 +19,7 @@ jobs:
           cml-runner \
             --log \
             --single \
-            --idle-timeout=1800 \
+            --idle-timeout=1800 \ 
             --token=${{ secrets.SUPERSECRET }} \
             --cloud=gcp \
             --cloud-region=us-west \
