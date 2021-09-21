@@ -29,4 +29,7 @@ jobs:
             --labels=cml \
             --cloud-startup-script=c3VkbyBhcHQtZ2V0IHVwZGF0ZQpzdWRvIGFwdC1nZXQgaW5zdGFsbCBhbnNpYmxlIGRvY2tlciAteQo= \
             --test-error-arg
+            
+      - run: cml-runner --bad-arg 1> /dev/null
+      - run: cml-runner --bad-arg 2> /dev/null
 
