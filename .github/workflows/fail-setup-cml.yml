@@ -1,4 +1,4 @@
-name: err
+name: setup-cml
 on: workflow_dispatch
 jobs:
   test-cml-error:
