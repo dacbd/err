@@ -1,0 +1,8 @@
+name: err
+on: workflow_dispatch
+jobs:
+  test-cml-error:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo rm -f $(which which)
+      - uses: DanielBarnes/setup-cml@log-version
