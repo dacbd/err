@@ -18,8 +18,6 @@ jobs:
           title: Action workflow failed.
           body: |
             Job `${{ github.job }}` ended with status: `${{ job.status }}`
-            'Context:'
-            ```json
-            ${{ toJSON(github) }}
-            ```
+            ### Context
+            [Failed Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
           assignees: DanielBarnes
