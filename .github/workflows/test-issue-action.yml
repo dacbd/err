@@ -17,8 +17,9 @@ jobs:
           token: ${{ github.token }}
           title: Action workflow failed.
           body: |
-            ${{ github.job }} ended with status: ${{ job.status }}
+            Job `${{ github.job }}` ended with status: `${{ job.status }}`
+            'Context:'
             ```json
-            ${{ toJSON(job) }}
+            ${{ toJSON(github) }}
             ```
           assignees: DanielBarnes
