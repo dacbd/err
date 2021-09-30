@@ -2,6 +2,16 @@
 name: Understanding jobs.<job_id>.container
 on: workflow_dispatch
 jobs:
+  test_cml-container:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/iterative/cml:latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: pwd
+      - run: ls -l
+      - run: uname -a
+      - run: python --version
   test_container:
     runs-on: ubuntu-latest
     container:
@@ -11,7 +21,7 @@ jobs:
       - run: pwd
       - run: ls -l
       - run: uname -a
-
+      - run: python --version
   test_ubunut-latest:
     runs-on: ubuntu-latest
     steps:
@@ -19,3 +29,4 @@ jobs:
       - run: pwd
       - run: ls -l
       - run: uname -a
+      - run: python --version
