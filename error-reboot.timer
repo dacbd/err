@@ -1,0 +1,9 @@
+[Unit]
+Description=Once Weekly timer to reboot for Sunday at 0000
+
+[Timer]
+OnCalendar=Sun 00:00
+Unit=custom-reboot.service
+
+[Install]
+WantedBy=timers.target

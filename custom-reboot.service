@@ -1,0 +1,9 @@
+[Unit]
+Description=Reboot weekly
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl reboot
+
+[Install]
+WantedBy=default.target
