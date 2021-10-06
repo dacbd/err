@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - id: test-step
+      - name: set some value
+        id: test-step
         run: echo "::set-output name=test-var::test-value"
       - name: test github-script
         uses: actions/github-script@v5
