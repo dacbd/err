@@ -14,5 +14,5 @@ jobs:
         with:
           result-encoding: string
           script: |
-          console.log(context)
-          return "empty"
+            console.log(context)
+            return "empty"
