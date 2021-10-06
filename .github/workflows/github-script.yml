@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: set some value
         id: test-step
-        run: echo "::set-output name=test-var::test-value"
+        run: echo '::set-output name=test-var::$(echo "test-value")'
       - name: test github-script
         uses: actions/github-script@v5
         env:
