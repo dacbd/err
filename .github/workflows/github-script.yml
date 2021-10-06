@@ -12,7 +12,7 @@ jobs:
       - name: test github-script
         uses: actions/github-script@v5
         env:
-          TEST_VAR: ${{ steps.test-step.outputs.name }}
+          TEST_VAR: ${{ steps.test-step.outputs.test-var }}
         with:
           result-encoding: string
           script: |
