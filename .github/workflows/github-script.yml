@@ -15,4 +15,5 @@ jobs:
           result-encoding: string
           script: |
             console.log(context)
+            console.log(github)
             return "empty"
