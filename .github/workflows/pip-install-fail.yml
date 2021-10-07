@@ -13,9 +13,9 @@ jobs:
       - run: uname -a
       - run: python --version
       - run: |
-        pip config debug
-        pip config list
-        pip cache info
-        pip cache list
-        pip debug
+          pip config debug
+          pip config list
+          pip cache info
+          pip cache list
+          pip debug
       - run: pip install tensorflow==2.5.0
