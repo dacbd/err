@@ -1,0 +1,18 @@
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+jobs:
+  check:
+    environment: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo ${{ inputs.environment }}
+    - name: env ref
+      env:
+        TEST: ${{ secrets.TEST_VAR }}
+      run: |
+        echo "test secret"
+        echo "${{ secrets.TEST_VAR }}"

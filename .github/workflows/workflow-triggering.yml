@@ -1,0 +1,6 @@
+on: workflow_dispatch
+jobs:
+  check:
+    uses: dacbd/errrrrr/.github/workflows/triggered.yml@main
+    with:
+      environment: foo
