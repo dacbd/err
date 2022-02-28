@@ -20,4 +20,5 @@ jobs:
     with:
       environment: ${{ github.event.client_payload.environment }}
       some_config_option: ${{ github.event.client_payload.tag }}
+    secrets:
       some_token: ${{ secrets.ONLY_ON_REPODIS }}
