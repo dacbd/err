@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # debug
-      - run: echo "${{ github.event }}"
-      - run: echo "${{ github.event.release }}"
+      - run: echo "${{ toJSON(github.event) }}"
+      - run: echo "${{ toJSON(github.event.release) }}"
       - run: echo "${{ github.event.release.tag_name }}"
       - run: echo "awesome release"
