@@ -1,0 +1,15 @@
+name: on release published
+on:
+  release:
+    types: [published]
+# https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#release
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      # debug
+      - run: echo "${{ github.event }}"
+      - run: echo "${{ github.event.release }}"
+      - run: echo "${{ github.event.release.tag_name }}"
+      - run: echo "awesome release"
