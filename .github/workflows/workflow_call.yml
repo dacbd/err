@@ -1,0 +1,18 @@
+on:
+  workflow_call:
+    inputs:
+      some_config_option:
+        required: true
+        type: string
+    secrets:
+      some_token:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ inputs.some_config_option  }}"
+      - run: |
+          echo "secret from env"
+          echo "${{ secrets.some_token }}" | md5sum
