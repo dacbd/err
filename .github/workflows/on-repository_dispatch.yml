@@ -1,0 +1,15 @@
+on:
+  # https://docs.github.com/en/rest/reference/repos#create-a-repository-dispatch-event
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#repository_dispatch
+  repository_dispatch:
+    types: [trigger-test]
+
+jobs:
+  some_job:
+    environment: ${{ github.event.client_payload.environment }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ toJSON(github.event) }}"
+      - run: |
+          echo "test environment secret"
+          echo "${{ secret.ONLY_ON_REPODIS  }}"
