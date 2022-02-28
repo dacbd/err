@@ -15,7 +15,9 @@ jobs:
           echo "${{ secrets.ONLY_ON_REPODIS  }}"
           echo "${{ secrets.ONLY_ON_REPODIS  }}" | md5sum
       - uses: actions/checkout@v2
-      - uses: dacbd/err/.github/workflows/workflow_call.yml@main
-        with:
-          some_config_option: ${{ github.event.client_payload.tag }}
-          some_token: ${{ secrets.ONLY_ON_REPODIS }}
+  workflow_call_job:
+    uses: ./.github/workflows/workflow_call.yml@main
+    with:
+      environment: ${{ github.event.client_payload.environment }}
+      some_config_option: ${{ github.event.client_payload.tag }}
+      some_token: ${{ secrets.ONLY_ON_REPODIS }}
