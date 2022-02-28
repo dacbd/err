@@ -16,7 +16,7 @@ jobs:
           echo "awesome release"
           curl \
             -X POST \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: token ${{ secrets.DACBD_PAT }}" \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/${{ github.repository }}/dispatches \
             -d '{"event_type":"event_type", "client_payload": {"environment":"REPODIS", "tag":"${{ github.event.release.tag_name }}"} }'
