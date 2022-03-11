@@ -13,7 +13,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cml ci
+          echo "stuff" > reports.md
           cml pr "."
 
-          echo "stuff" > reports.md
 
