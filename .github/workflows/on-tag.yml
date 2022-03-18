@@ -1,0 +1,20 @@
+name: on tag test
+
+on:
+  push:
+    tags:
+      - 'v**'
+
+
+jobs:
+  ontag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          git status
+          git tag
+      - name: draft release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
