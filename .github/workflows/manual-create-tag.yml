@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: iterative/setup-cml@v1
       - name: Compute tag
         id: version
         uses: reecetech/version-increment@main
@@ -15,8 +16,9 @@ jobs:
           increment: patch
       - name: Tag version
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "github-actions"
+          #git config --local user.email "actions@github.com"
+          #git config --local user.name "github-actions"
+          cml ci
           echo "compute next git tag"
           echo "detected version: ${{ steps.version.outputs.current-version }} from action"
           echo "computed: ${{ steps.version.outputs.version }} from action"
