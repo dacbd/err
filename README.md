@@ -1,4 +1,4 @@
 # err (errors)
-Where bugs and strange happening come to die, maybe...
+Where bugs and strange happenings come to die, maybe...
 
-Some examples and helpful snippets may live here.
+Some examples and helpful snippets ***might*** live here.
