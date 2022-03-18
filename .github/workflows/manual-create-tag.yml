@@ -15,8 +15,8 @@ jobs:
           increment: patch
       - name: Tag version
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "github-actions"
+          git config --local user.email "no-reply@github.com"
+          git config --local user.name "totally_not_actions"
           echo "compute next git tag"
           echo "detected version: ${{ steps.version.outputs.current-version }} from action"
           echo "computed: ${{ steps.version.outputs.version }} from action"
