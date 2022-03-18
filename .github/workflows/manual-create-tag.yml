@@ -1,0 +1,28 @@
+name: Manual actions make tag
+on:
+  workflow_dispatch:
+
+jobs:
+  make-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compute tag
+        id: version
+        uses: reecetech/version-increment@main
+        with:
+          scheme: semver
+          increment: patch
+      - name: Tag version
+        run: |
+          echo "compute next git tag"
+          echo "detected version: ${{ steps.version.outputs.current-version }} from action"
+          echo "computed: ${{ steps.version.outputs.version }} from action"
+          git tag -m "auto-tag" $(echo "v${{ steps.version.outputs.version }}")
+      - name: Push for git
+        #if: steps.commit.outputs.push == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
+          force: false
+          tags: true
