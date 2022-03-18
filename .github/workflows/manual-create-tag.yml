@@ -22,10 +22,9 @@ jobs:
           echo "computed: ${{ steps.version.outputs.version }} from action"
           git tag -m "auto-tag" $(echo "v${{ steps.version.outputs.version }}")
       - name: Push for git
-        env:
-          GITHUB_TOKEN: ${{ secrets.DACBD_PAT }}
         uses: ad-m/github-push-action@master
         with:
+          github_token: ${{ secrets.DACBD_PAT }}
           branch: main
           force: false
           tags: true
