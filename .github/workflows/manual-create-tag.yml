@@ -14,8 +14,6 @@ jobs:
           scheme: semver
           increment: patch
       - name: Tag version
-        env:
-          GITHUB_TOKEN: ${{ secrets.DACBD_PAT }}
         run: |
           git config --local user.email "no-reply@github.com"
           git config --local user.name "totally_not_actions"
@@ -24,7 +22,8 @@ jobs:
           echo "computed: ${{ steps.version.outputs.version }} from action"
           git tag -m "auto-tag" $(echo "v${{ steps.version.outputs.version }}")
       - name: Push for git
-        #if: steps.commit.outputs.push == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.DACBD_PAT }}
         uses: ad-m/github-push-action@master
         with:
           branch: main
