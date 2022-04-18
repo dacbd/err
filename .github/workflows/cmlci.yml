@@ -6,13 +6,13 @@ on:
 jobs:
   test-v2:
     runs-on: ubuntu-latest
-    conatiner: ghcr.io/iterative/cml:latest
+    container: ghcr.io/iterative/cml:latest
     steps:
       - uses: actions/checkout@v2
       - run: cml ci
   test-v3:
     runs-on: ubuntu-latest
-    conatiner: ghcr.io/iterative/cml:latest
+    container: ghcr.io/iterative/cml:latest
     steps:
       - uses: actions/checkout@v3
       - run: cml ci
