@@ -1,0 +1,17 @@
+name: create-issue-action Test
+on:
+  repository_dispatch:
+    types:
+      - "basic"
+
+jobs:
+  basic-test:
+    if: github.event.event_type == "basic"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: Simple test
+          body: test issue
