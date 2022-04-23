@@ -6,7 +6,7 @@ on:
 
 jobs:
   basic-test:
-    if: github.event.event_type == "basic"
+    if: github.event.event_type == 'basic'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
