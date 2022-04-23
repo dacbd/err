@@ -1,4 +1,4 @@
-name: create-issue-action Test
+name: create-issue-action
 on:
   repository_dispatch:
     types:
@@ -11,8 +11,9 @@ jobs:
     steps:
       - run: |
           echo "${{ github.event.event_type }}"
+          echo "${{ github.event.client_payload.ref_name }}"
       - uses: actions/checkout@v3
-      - uses: dacbd/create-issue-action@main
+      - uses: dacbd/create-issue-action@${{github.event.client_payload.ref_name}}
         with:
           token: ${{ github.token }}
           title: Simple test
