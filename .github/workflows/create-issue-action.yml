@@ -6,9 +6,11 @@ on:
 
 jobs:
   basic-test:
-    if: github.event.event_type == 'basic'
+    #if: github.event.event_type == 'basic'
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          echo "${{ github.event.event_type }}"
       - uses: actions/checkout@v3
       - uses: dacbd/create-issue-action@main
         with:
