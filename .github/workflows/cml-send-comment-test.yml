@@ -14,4 +14,5 @@ jobs:
         run: |
           echo "# Test" >> report.md
           echo "hello" >> report.md
+          echo "web patch test" >> report.md
           cml send-comment report.md
