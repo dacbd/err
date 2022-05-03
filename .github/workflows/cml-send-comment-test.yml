@@ -1,0 +1,15 @@
+name: cml send-comment test
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: iterative/setup-cml@v1
+      - name: test
+        run: |
+          echo "# Test" >> report.md
+          echo "hello" >> report.md
+          cml send-comment report.md
