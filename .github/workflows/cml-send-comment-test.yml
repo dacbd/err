@@ -10,7 +10,7 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: test
         env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "# Test" >> report.md
           echo "hello" >> report.md
