@@ -1,0 +1,10 @@
+name: setup-dev err with container?
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: ghcr.io/iterative/cml:0-dvc2-base1
+    steps:
+      - uses: iterative/setup-dvc@v1
+
