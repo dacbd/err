@@ -1,4 +1,4 @@
-name: setup-dev err with container?
+name: setup-dev err with version
 on:
   workflow_dispatch:
 jobs:
