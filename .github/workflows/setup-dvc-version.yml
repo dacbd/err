@@ -8,4 +8,6 @@ jobs:
       - uses: iterative/setup-dvc@v1
         with:
           version: 2.15.0
-
+      - run: |
+          dvc doctor
+          dvc --version
