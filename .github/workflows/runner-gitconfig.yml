@@ -1,6 +1,5 @@
 name: runner gitconfig?
 on:
-  push:
   workflow_dispatch:
 
 jobs:
@@ -21,6 +20,45 @@ jobs:
         run: |
           echo "${{ secrets.DACBD_PAT }}" | gh auth login --hostname github.com --with-token
           gh auth setup-git
+      - name: spin 1
+        run:
+          sleep 7200
+      - name: spin 2
+        run:
+          sleep 7200
+      - name: spin 3
+        run:
+          sleep 7200
+      - name: spin 4
+        run:
+          sleep 7200
+      - name: spin 5
+        run:
+          sleep 7200
+      - name: spin 6
+        run:
+          sleep 7200
+      - name: spin 7
+        run:
+          sleep 7200
+      - name: spin 8
+        run:
+          sleep 7200
+      - name: spin 9
+        run:
+          sleep 7200
+      - name: spin 10
+        run:
+          sleep 7200
+      - name: spin 11
+        run:
+          sleep 7200
+      - name: spin 12
+        run:
+          sleep 7200
+      - name: spin 13
+        run:
+          sleep 7200
       - run: |
           git config --list
           git config --unset-all http.https://github.com/.extraheader
