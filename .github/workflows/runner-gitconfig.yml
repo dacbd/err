@@ -9,3 +9,11 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
            git config --list
+      - name: setup gh
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          echo "${{ secrets.DACBD_PAT }}" | gh auth login --hostname github.com --with-token
+          gh auth setup-git
+      - run: |
+           git config --list
