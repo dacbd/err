@@ -8,3 +8,10 @@ jobs:
     steps:
       - uses: iterative/setup-dvc@d001-download-origin
 
+  test2:
+    runs-on: ubuntu-latest
+    container: ghcr.io/iterative/cml:0-dvc2-base1
+    steps:
+      - uses: iterative/setup-dvc@d001-download-origin
+        with:
+          version: 2.15.0
