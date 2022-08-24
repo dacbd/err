@@ -1,6 +1,7 @@
 name: runner gitconfig?
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   test:
