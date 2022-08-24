@@ -20,6 +20,6 @@ jobs:
           gh auth setup-git
       - run: |
            git config --list
-           git clone https://github.com/dacbd/err-external.git test2
+           git clone https://github.com/dacbd/err-private.git test2
            ls -hal
 
