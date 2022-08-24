@@ -9,18 +9,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-           git config --list
-           git clone https://github.com/dacbd/err.git test1
-           git clone https://github.com/dacbd/err-private.git test0
-           ls -hal
-      - name: setup gh
-        run: |
+          git config --list
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
+          git clone https://github.com/dacbd/err.git test1
+          git clone https://github.com/dacbd/err-private.git test0
+          ls -hal
+      - name: setup gh
+        run: |
           echo "${{ secrets.DACBD_PAT }}" | gh auth login --hostname github.com --with-token
           gh auth setup-git
       - run: |
-           git config --list
-           git clone https://github.com/dacbd/err-private.git test2
-           ls -hal
+          git config --list
+          git clone https://github.com/dacbd/err-private.git test2
+          ls -hal
 
