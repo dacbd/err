@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.DACBD_PAT }}
       - run: |
           git config --list
           git config --global user.name "GitHub Actions"
