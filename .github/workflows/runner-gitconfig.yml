@@ -11,6 +11,7 @@ jobs:
       - run: |
            git config --list
            git clone https://github.com/dacbd/err.git test1
+           git clone https://github.com/dacbd/err-private.git test0
            ls -hal
       - name: setup gh
         run: |
