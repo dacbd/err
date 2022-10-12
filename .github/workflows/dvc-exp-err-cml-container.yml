@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - uses: iterative/setup-dvc@v1
       - run: |
           cat <<-END
@@ -23,6 +25,8 @@ jobs:
       image: ghcr.io/iterative/cml:latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - run: |
           cat <<-END
             stages:
