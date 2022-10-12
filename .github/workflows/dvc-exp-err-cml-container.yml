@@ -15,6 +15,7 @@ jobs:
           echo "  train:" >> dvc.yaml
           echo "    cmd: date" >> dvc.yaml
       - run: |
+          whoami
           dvc init
           dvc exp run
   test:
