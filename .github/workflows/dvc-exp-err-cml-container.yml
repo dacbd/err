@@ -32,19 +32,3 @@ jobs:
       - run: |
           dvc init
           dvc exp run
-  test-pass:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/iterative/cml:latest
-      options: --user="$(id --user):$(id --group)"
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - run: |
-          echo "stages:" >> dvc.yaml
-          echo "  train:" >> dvc.yaml
-          echo "    cmd: date" >> dvc.yaml
-      - run: |
-          dvc init
-          dvc exp run
