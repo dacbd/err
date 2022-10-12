@@ -3,6 +3,20 @@ on:
   workflow_dispatch:
   push:
 jobs:
+  neg-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: iterative/setup-dvc@v1
+      - run: |
+          cat <<-END
+            stages:
+              train:
+                cmd: date
+          END > dvc.yaml
+      - run: |
+          dvc init
+          dvc exp run
   test:
     runs-on: ubuntu-latest
     container:
