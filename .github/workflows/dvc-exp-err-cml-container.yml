@@ -16,6 +16,7 @@ jobs:
           echo "    cmd: date" >> dvc.yaml
       - run: |
           whoami
+          id
           dvc init
           dvc exp run
   test:
