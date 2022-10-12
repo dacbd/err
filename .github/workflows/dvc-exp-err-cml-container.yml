@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/iterative/cml:latest
-      options: --user=runner
+      options: --userns=host
     steps:
       - uses: actions/checkout@v3
         with:
