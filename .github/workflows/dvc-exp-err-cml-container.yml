@@ -11,11 +11,11 @@ jobs:
           fetch-depth: 0
       - uses: iterative/setup-dvc@v1
       - run: |
-          cat <<-END
-            stages:
-              train:
-                cmd: date
-          END > dvc.yaml
+          echo " \
+            stages: \
+              train: \
+                cmd: date \
+          " > dvc.yaml
       - run: |
           dvc init
           dvc exp run
@@ -28,11 +28,11 @@ jobs:
         with:
           fetch-depth: 0
       - run: |
-          cat <<-END
-            stages:
-              train:
-                cmd: date
-          END > dvc.yaml
+          echo " \
+            stages: \
+              train: \
+                cmd: date \
+          " > dvc.yaml
       - run: |
           dvc init
           dvc exp run
