@@ -18,4 +18,4 @@ jobs:
             echo "### test image" >> report.md
             echo "![](./${file})" >> report.md
           done
-          cml create comment ./report.md
+          cml comment create ./report.md
