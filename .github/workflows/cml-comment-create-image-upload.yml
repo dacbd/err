@@ -10,6 +10,10 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: add images
         run: |
+          touch report.md
+          echo "# test comment" > report.md
           for file in assets/*; do
-            echo $file
+            echo "### test image" >> report.md
+            echo "![](./${file})" >> report.md
           done
+          cat ./report.md
