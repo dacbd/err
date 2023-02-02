@@ -1,0 +1,17 @@
+name: check run number
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          if [ $GITHUB_RUN_ATTEMPT == 1 ]; then
+            echo "do thing"
+          else
+            echo "skip"
+          fi
