@@ -19,6 +19,7 @@ jobs:
         env:
           REPO_TOKEN: ${{ github.token }}
         run: |
+          sleep 60
           # list artifacts
           curl \
             -H "Accept: application/vnd.github+json" \
