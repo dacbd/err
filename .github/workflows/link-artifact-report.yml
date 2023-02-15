@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: iterative/setup-cml@v1
-      - names: Create some file
+      - name: Create some file
         run: |
           dd if=/dev/random of=example_file bs=20M count=1
       - uses: actions/upload-artifact@v3
