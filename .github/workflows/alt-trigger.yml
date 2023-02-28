@@ -4,8 +4,8 @@ on:
 
       
 jobs:
+  environment: dev
   deploy:
-    environment: dev
     uses: ./.github/workflows/alt-triggered.yml
     with:
       deploy_ref: ${{ github.ref_name }}
