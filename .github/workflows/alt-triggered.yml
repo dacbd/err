@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ input.deploy_ref }}
+          ref: ${{ inputs.deploy_ref }}
       - name: build
-        run: echo "build project ${{ input.deploy_ref }}"
+        run: echo "build project ${{ inputs.deploy_ref }}"
       - name: deploy
         run: echo "deploy project ${{ secrets.MY_DEPLOY_KEY }}"
