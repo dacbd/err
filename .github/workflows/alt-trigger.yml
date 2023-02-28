@@ -4,9 +4,9 @@ on:
 
       
 jobs:
-  environment: dev
   deploy:
     uses: dacbd/err/.github/workflows/alt-triggered.yml@main
     with:
       deploy_ref: ${{ github.ref_name }}
+      environment: dev
     secrets: inherit
