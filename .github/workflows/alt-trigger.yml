@@ -5,6 +5,7 @@ on:
       
 jobs:
   deploy:
+    environment: dev
     uses: dacbd/err/.github/workflows/alt-triggered.yml@main
     with:
       deploy_ref: ${{ github.ref_name }}
