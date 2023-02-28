@@ -5,7 +5,7 @@ on:
       
 jobs:
   deploy:
-    uses: dacbd/err/.github/workflows/alt-triggered.yml
+    uses: dacbd/err/.github/workflows/alt-triggered.yml@main
     with:
       deploy_ref: ${{ github.ref_name }}
     secrets: inherit
