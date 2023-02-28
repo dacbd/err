@@ -4,7 +4,6 @@ on:
 
       
 jobs:
-  environment: dev
   deploy:
     uses: ./.github/workflows/alt-triggered.yml
     with:
