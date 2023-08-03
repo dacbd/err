@@ -11,3 +11,4 @@ jobs:
       - run: |
           git config --get remote.origin.url
           git config --get "http.https://github.com/.extraheader"
+          echo $GITHUB_TOKEN
