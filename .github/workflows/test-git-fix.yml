@@ -1,0 +1,13 @@
+name: test token swap
+on: 
+  push:
+    barnches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git config --get remote.origin.url
+          git config --get "http.https://github.com/.extraheader"
