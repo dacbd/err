@@ -1,0 +1,12 @@
+name: basic cml v2 test
+on: 
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: iterative/setup-cml@v2-setup
+      - name: test
+        run: cml --version
