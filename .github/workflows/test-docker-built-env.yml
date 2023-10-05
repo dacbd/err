@@ -1,0 +1,21 @@
+
+name: use container built in repo
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: 
+      image: ghcr.io/dacbd/err:environment-training
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.11.5'
+      - uses: iterative/setup-cml@v2
+      - name: test
+        run: cml --version
+      - name: train
+        run: python --version
