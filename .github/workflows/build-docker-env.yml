@@ -1,5 +1,6 @@
 name: Build CI Workflow Environment
 on:
+  workflow_dispatch:
   push:
     paths:
       - .github/env/training/Dockerfile
@@ -20,6 +21,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .github/env/training
-          file: ./Dockerfile
+          file: .github/env/training/Dockerfile
           push: true
           tags: 'ghcr.io/${{ github.repository }}:environment-training'
