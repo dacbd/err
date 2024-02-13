@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          if [ "${{ github.ref_name }}" != "retain" ]; then
+          if [ "${{ github.head_ref }}" != "retain" ]; then
           echo "wrong branch dont run"
           exit 1
           fi
@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
       - run: git checkout -b sub-pipeline-${{ matrix.sub-pipeline }}
       - run: echo "running sub-pipeline ${{ matrix.sub-pipeline }}"
@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
       - run: git merge sub-pipeline-${{ matrix.sub-pipeline }}
       - run: git push
@@ -55,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
       - run: echo "evaluating"
       - run: git commit --allow-empty -m "evaluation results"
