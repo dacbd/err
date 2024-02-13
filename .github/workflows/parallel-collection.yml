@@ -58,7 +58,7 @@ jobs:
       - run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions Bot"
-      - run: git merge sub-pipeline-${{ matrix.sub-pipeline }}
+      - run: git merge origin/sub-pipeline-${{ matrix.sub-pipeline }}
       - run: git push --set-upstream origin ${{ github.head_ref }} 
   eval:
     runs-on: ubuntu-latest
